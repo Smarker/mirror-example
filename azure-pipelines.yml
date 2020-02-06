@@ -19,4 +19,4 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      git push --mirror
+      git push --mirror HEAD:master
