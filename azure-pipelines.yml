@@ -11,6 +11,7 @@ variables:
 
 steps:
 - script: |
+    ls
     git clone --mirror https://$(azdo-pat)@dev.azure.com/stmarker/mirror-example/_git/mirror-example
     cd mirror-example.git
     git push --mirror https://$(github-pat)@github.com/Smarker/mirror-example.git
