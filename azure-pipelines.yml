@@ -19,4 +19,4 @@ steps:
 - task: CmdLine@2
   inputs:
     script: |
-      git push --mirror HEAD:master
+      git push --mirror https://$(github-pat)@github.com/Smarker/mirror-example.git HEAD:master
