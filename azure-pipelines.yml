@@ -9,13 +9,12 @@ variables:
 
 steps:
 - script: |
-    git remote set-url --push --fetch origin https://$(github-pat)@github.com/Smarker/mirror-example.git
+    git remote set-url --push origin https://$(github-pat)@github.com/Smarker/mirror-example.git
 
 - task: CmdLine@2
   inputs:
     script: |
-      git remote -v
-      git fetch -p origin
+      git fetch -p https://$(github-pat)@github.com/Smarker/mirror-example.git
 
 - task: CmdLine@2
   inputs:
