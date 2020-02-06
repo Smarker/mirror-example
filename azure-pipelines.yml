@@ -16,6 +16,7 @@ steps:
 
     cd ..
     echo "current directory"
+    ls
     
     git clone --mirror https://$(azdo-pat)@dev.azure.com/stmarker/mirror-example/_git/mirror-example
     cd mirror-example.git
