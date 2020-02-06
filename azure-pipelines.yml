@@ -9,7 +9,7 @@ variables:
 
 steps:
 - script: |
-    git remote set-url --push origin https://$(github-pat)@github.com:Smarker/mirror-example.git
+    git remote set-url --push origin https://$(github-pat)@github.com/Smarker/mirror-example.git
     git fetch -p origin
     git push --mirror
   displayName: 'Update github mirror repository'
