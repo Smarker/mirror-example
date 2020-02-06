@@ -1,0 +1,11 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: |
+    git fetch -p origin
+    git push --mirror
+  displayName: 'Update github mirror repository'
