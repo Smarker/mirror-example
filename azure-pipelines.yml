@@ -1,3 +1,5 @@
+# http://blog.plataformatec.com.br/2013/05/how-to-properly-mirror-a-git-repository/
+
 trigger:
 - master
 
@@ -9,14 +11,6 @@ variables:
 
 steps:
 - script: |
-    git remote set-url --push origin https://$(github-pat)@github.com/Smarker/mirror-example.git
-
-- task: CmdLine@2
-  inputs:
-    script: |
-      git fetch -p https://$(github-pat)@github.com/Smarker/mirror-example.git
-
-- task: CmdLine@2
-  inputs:
-    script: |
-      git push --mirror https://$(github-pat)@github.com/Smarker/mirror-example.git HEAD:master
+    git clone --mirror https://$(azdo-pat)@dev.azure.com/stmarker/mirror-example/_git/mirror-example
+    cd mirror-example.git
+    git push --mirror https://$(github-pat)@github.com/Smarker/mirror-example.git
